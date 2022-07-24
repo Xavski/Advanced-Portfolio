@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="styles.css">
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("zzMmEp0C1_4reNut4");
+        })();
+    </script>
 </head>
 
 <body>
@@ -33,7 +40,7 @@
                     link__hover-effect--black
                     ">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -45,7 +52,7 @@
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
-                    "><i class="fas fa-adjust"></i></a>
+                    "><i class="fas fa-adjust" onclick="toggleContrast()"></i></a>
                 </li>
             </ul>
         </nav>
@@ -74,7 +81,7 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
         </button>
         <a class="scroll" href="#projects">
@@ -123,31 +130,42 @@
 
 
             <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">
                     Let's have a chat!
                 </h3>
                 <h4 class="modal__sub-title modal__sub-title--contact">
                     I'm currently open to new opportunities.
                 </h4>
-                <form id="contact__form" action="">
+                <form id="contact__form" onsubmit="contact(event)">
                     <div class="form__item">
-                        <label class="form__item--label" for="name">Name</label>
-                        <input class="input" name="user_name" type="text" required>
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
                     </div>
                     <div class="form__item">
-                        <label class="form__item--label" for="name">Name</label>
-                        <input class="input" name="user_name" type="text" required>
+                        <label class="form__item--label">E-mail</label>
+                        <input class="input" name="user_email" type="email" required></input>
                     </div>
                     <div class="form__item">
-                        <label class="form__item--label" for="name">Name</label>
-                        <input class="input" name="user_name" type="text" required>
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="user_message" type="text" required></textarea>
                     </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
                 </form>
 
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking with you soon.
+                </div>
+
             </div>
-
-
+            
         </div>
+
+        <img src="./assets/semi circle.svg" class="shape shape--0" alt="">
     </section>
     <section id="projects">
         <div class="container">
@@ -213,7 +231,7 @@
                 footer__social--link
                 link__hover-effect
                 link__hover-effect--white
-                ">
+                " onclick="toggleModal()">
                         Contact</a>
                     <a href="#" class="
                 footer__social--link

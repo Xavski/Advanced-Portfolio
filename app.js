@@ -2,6 +2,8 @@
 //service_ojiv7bw
 //zzMmEp0C1_4reNut4
 
+
+
 function contact(event){
     event.preventDefault();
     
@@ -54,6 +56,7 @@ function toggleContrast(){
     
 }
 
+// const scaleFactor = 1/20
 const scaleFactor = 1/20
 function moveBackground(event){
     const shapes = document.querySelectorAll(".shape")
@@ -66,3 +69,7 @@ function moveBackground(event){
         shapes[i].style.transform = `translate(${x * boolInt}px,${y * boolInt}px)`
     }
 }
+
+
+Aos.init()
+

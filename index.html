@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Xaviour</title>
+    <link rel="icon" type="image/x-icon" href="/assets/XS-logo.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
-        (function () {
-            emailjs.init("zzMmEp0C1_4reNut4");
-        })();
+    (function () {
+        emailjs.init("zzMmEp0C1_4reNut4");
+    })();
     </script>
+       
 </head>
 
 <body>
+    <canvas id="canvas1"></canvas>
     <section id="landing-page" onmousemove="moveBackground(event)">
+        
         <nav>
             <figure>
                 <img id="personal-logo" src="./assets/XS-logo.png" alt="">
             </figure>
-
+            
             <ul class="nav__link--list">
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -34,7 +40,7 @@
                     ">About</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#" class="
+                    <a href="#projects" class="
                     nav__link--anchor
                     link__hover-effect
                     link__hover-effect--black
@@ -47,47 +53,42 @@
                     link__hover-effect--black
                     ">Contact</a>
                 </li>
-                <li class="nav__link click">
-                    <a href="#" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black
-                    "><i class="fas fa-adjust" onclick="toggleContrast()"></i></a>
-                </li>
+                
             </ul>
         </nav>
-
+        
         <header class="header">
             <div class="header__content">
-                <h1 class="title">Hey</h1>
-                <h1 class="title"><span class="color">I'm Xaviour.</span></h1>
-                <p class="header__para">I'm a <span class="color">Frontend Softward Engineer</span> with a passion for
+                <h1 class="title" data-aos="fade-right">Hello</h1>
+                <h1 class="title" data-aos="fade-left"><span class="color">I am Xaviour.</span></h1>
+                <p data-aos="fade-right" class="header__para">I'm a <span class="color">Frontend Software Engineer</span> with a strong passion for
                     building web applications with great user experiences.
                     <br>
-                    Here's a bit more <span class="color">about me.</span>
-                </p>
-                <div class="social__list">
-                    <a href="https://google.com" target='_blank' class="social__link click">
+                    Discover more <span class="color">about me </span>below.
+                </p>    
+                <div class="social__list" >
+                    <a href="https://www.linkedin.com/in/xaviour-saveski-6a705b24a/" target='_blank' class="social__link click">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social__link click">
+                    <a href="https://github.com/Xavski" target='_blank' class="social__link click">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social__link click">
+                    <a href="#" target='_blank' class="social__link click">
                         <i class="fas fa-file-pdf"></i>
                     </a>
-
-
+                    
+                    
                 </div>
             </div>
         </header>
+        
         <a href="#">
         <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
         </button>
         </a>
         <a class="scroll" href="#projects">
-            <div class="scroll__icon click"></div>
+            <i class="fas fa-angle-down click"></i>
         </a>
 
         <div class="modal">
@@ -95,42 +96,55 @@
                 <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
                 <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
                 <p class="modal__para">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, nemo! Molestias nulla ratione
-                    sunt dicta doloremque eligendi, voluptate labore numquam consequuntur ea voluptates harum,
-                    dignissimos quae vitae iusto recusandae mollitia?
+                    I'm an ambitious individual looking to constantly improve and apply my skills being a frontend software engineer. 
                     <br>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae odio eos doloremque
-                    voluptatibus molestiae nemo a, provident sit vel deserunt accusantium pariatur quos aliquid. Ab amet
-                    facilis commodi consequuntur illo.
+                    I have a strong passion for coding interactive and great user experiences to deliver a high performance web applications for online users.
+                    
+                    
                 </p>
-
+                
                 <div class="modal__languages">
                     <figure class="modal__language">
                         <img class="modal__language--img"
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
                             alt="">
-                        <span class="language__name">HTML</span>
+                        <span class="language__name" >HTML</span>
                     </figure>
                     <figure class="modal__language">
                         <img class="modal__language--img"
-                            src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
-                        <span class="language__name">HTML</span>
+                        src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                        <span class="language__name">CSS</span>
                     </figure>
                     <figure class="modal__language">
                         <img class="modal__language--img"
-                            src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
-                        <span class="language__name">HTML</span>
+                        src="./assets/JavaScript-logo.png" alt="">
+                        <span class="language__name">Javascript</span>
                     </figure>
                     <figure class="modal__language">
                         <img class="modal__language--img"
-                            src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
-                        <span class="language__name">HTML</span>
+                        src="./assets/React-icon.svg.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                        src="./assets/github.png" alt="">
+                        <span class="language__name">gitHub</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                        src="./assets/Tailwind_CSS_Logo.svg.png" alt="">
+                        <span class="language__name">Tailwind CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                        src="./assets/firebase.png" alt="">
+                        <span class="language__name">Firebase</span>
                     </figure>
                 </div>
             </div>
+            
 
-
-
+            
             <div class="modal__half modal__contact">
                 <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">
@@ -154,65 +168,136 @@
                     </div>
                     <button id="contact__submit" class="form__submit">Send it my way</button>
                 </form>
-
+                
                 <div class="modal__overlay modal__overlay--loading">
                     <i class="fas fa-spinner"></i>
                 </div>
-
+                
                 <div class="modal__overlay modal__overlay--success">
                     Thanks for the message! Looking forward to speaking with you soon.
                 </div>
-
+                
             </div>
             
         </div>
 
-        <img src="./assets/semi circle.svg" class="shape shape--0" alt="">
-        <img src="./assets/semi circle.svg" class="shape shape--8" alt="">
-        <img src="./assets/circle.svg" class="shape shape--7" alt="">
-        <img src="./assets/squiggly.svg" class="shape shape--6" alt="">
-        <img src="./assets/circle.svg" class="shape shape--5" alt="">
-        <img src="./assets/triangle.svg" class="shape shape--4" alt="">
-        <img src="./assets/circle.svg" class="shape shape--3" alt="">
-        <img src="./assets/squiggly.svg" class="shape shape--2" alt="">
-        <img src="./assets/circle.svg" class="shape shape--1" alt="">
+        
     </section>
     <section id="projects">
         <div class="container">
             <div class="row">
-                <h1 class="section__title">
-                    Here are some of my <span class="color">projects</span>
+                <h1 class="section__title" data-aos="fade-up">
+                My <span class="color">projects</span>
                 </h1>
                 <ul class="project__list">
-                    <li class="project">
+
+
+                    <li class="project" data-aos="zoom-in">
                         <div class="project__wrapper">
-                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <img src="./assets/movieProject.png" class="project__img" alt="">
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">
-                                    Car Sales Project
+                                    Movies.io (Movie Project)
                                 </h3>
                                 <h4 class="project__description--sub-title">
-                                    HTML, CSS, JavaScript, Vue, Vuex
+                                    HTML, CSS, Javascript XML, React
                                 </h4>
                                 <p class="project__description--para">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam autem,
-                                    unde
-                                    eum amet dolores assumenda expedita, dolor nesciunt placeat molestias deserunt
-                                    atque
-                                    sequi voluptates magni est aliquam ratione voluptate.
+                                    Search movie project created with react, where movies are fetched using axios from the OMDb API source.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="#" class="project__description--link">
+                                    <a href="https://github.com/Xavski/React-Movie-Project" target='_blank' class="project__description--link">
                                         <i class="fab fa-github"></i>
                                     </a>
-                                    <a href="#" class="project__description--link">
+                                    <a href="https://react-movie-project-eosin.vercel.app/" target='_blank' class="project__description--link">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
+
+                    <li class="project" data-aos="zoom-in">
+                        <div class="project__wrapper">
+                            <img src="./assets/NFT-project.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Ultraverse - NFT World
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, JavaScript XML, React, Owl Carousel, AOS animations
+                                </h4>
+                                <p class="project__description--para">
+                                    
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/Xavski/Xaviour-internship" target='_blank' class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://xaviour-internship.vercel.app/"  target='_blank' class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="project" data-aos="zoom-in">
+                        <div class="project__wrapper">
+                            <img src="./assets/Hulu-clone.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Hulu Clone
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, Next.js, and Tailwind CSS
+                                </h4>
+                                <p class="project__description--para">
+                                    
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/Xavski/hulu-clone" target='_blank' class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://hulu-clone-omega-smoky.vercel.app/" target='_blank' class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="project" data-aos="zoom-in">
+                        <div class="project__wrapper">
+                            <img src="./assets/google-clone.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Google Clone
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    React.js, HTML, CSS, Javascript, google API
+                                </h4>
+                                <p class="project__description--para">
+                                    
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/Xavski/google-clone-app" target='_blank' class="project__description--link">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://google-clone-app-eta.vercel.app/" target='_blank' class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    
                 </ul>
             </div>
         </div>
@@ -225,38 +310,44 @@
                     <a href="#"><img src="./assets/XS-logo.png" class="footer__logo--img" alt=""></a>
                 </figure>
                 <div class="footer__social--list">
-                    <a href="#" class="
+                    <a href="https://github.com/Xavski"  target='_blank' class="
                     footer__social--link
                     link__hover-effect
                     link__hover-effect--white
                     ">
-                        GitHub</a>
+                    GitHub</a>
+                    <a href="https://www.linkedin.com/in/xaviour-saveski-6a705b24a/" target='_blank' class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white
+                    ">
+                    LinkedIn</a>
                     <a href="#" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white
-                ">
-                        LinkedIn</a>
-                    <a href="#" class="
-                footer__social--link
+                    footer__social--link
                 link__hover-effect
                 link__hover-effect--white
                 " onclick="toggleModal()">
-                        Contact</a>
-                    <a href="#" class="
+                Contact</a>
+                <a href="#" class="
                 footer__social--link
                 link__hover-effect
                 link__hover-effect--white
                 ">
-                        Resume</a>
-                </div>
-                <div class="footer__copyright">
-                    Copyright &copy; 2022 Xaviour Saveski
-                </div>
-
+                Resume</a>
             </div>
+            <div class="footer__copyright">
+                <div>Copyright &copy; 2022</div>
+                <div class="name">Xaviour Saveski</div>
+            </div>
+
+        </div>
         </div>
     </footer>
 </body>
-
+<script>
+    AOS.init({
+        duration:1200,
+    });
+</script> 
+<script src="/background.js"></script>
 </html>

@@ -16,6 +16,9 @@
 
 }
 
+.disabled{
+    cursor: not-allowed;
+}
 
 html{
     scroll-behavior: smooth;

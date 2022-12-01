@@ -70,6 +70,3 @@ function moveBackground(event){
     }
 }
 
-
-Aos.init()
-
